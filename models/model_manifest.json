@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "model_version": "canonical-stage02-frozen-v1",
+  "export_date": "2026-10-04T11:12:28.968913+00:00",
+  "xgboost_version": "3.1.2",
+  "threshold": 0.45518994331359863,
+  "threshold_display": "0.4552",
+  "route_rule": "A if probability >= threshold; B otherwise",
+  "input_units": {
+    "Age": "years",
+    "BUN": "mmol/L",
+    "RDW": "%",
+    "SUA": "μmol/L",
+    "HbA1c": "%",
+    "Cl": "mmol/L",
+    "A/G": "ratio",
+    "NEU#": "10^9/L",
+    "SCr": "μmol/L",
+    "Non-HDL-C": "mmol/L",
+    "PLT": "10^9/L",
+    "ALT": "U/L",
+    "K": "mmol/L",
+    "MCV": "fL",
+    "MON#": "10^9/L",
+    "LYM#": "10^9/L"
+  },
+  "source_artifact": "stage02_model_bundle.joblib",
+  "source_sha256": "d74a1d31d73d8a2d52ccce956692652bf39a614c354877ae6682b717b5df4e1e",
+  "models": {
+    "gatekeeper": {
+      "file": "gatekeeper_xgb.json",
+      "model_source": "Gatekeeper_full",
+      "feature_list": [
+        "Age",
+        "BUN",
+        "RDW",
+        "SUA",
+        "HbA1c",
+        "Cl",
+        "A/G",
+        "NEU#"
+      ],
+      "objective": "binary:logistic",
+      "sha256": "671f24a2f67128b0ca7428d060295f652e38ba67986b5ae69b35c35023e72df7"
+    },
+    "m0": {
+      "file": "m0_global_xgb.json",
+      "model_source": "M0_Global",
+      "feature_list": [
+        "Age",
+        "SCr",
+        "SUA",
+        "Non-HDL-C",
+        "RDW",
+        "K",
+        "PLT",
+        "MCV",
+        "ALT",
+        "MON#",
+        "LYM#"
+      ],
+      "objective": "binary:logistic",
+      "sha256": "ee96f0b303a3eb05d31cf9f86ad31e7021fad64ee9a0855dd8bd9c776bee2bcf"
+    },
+    "m1_a": {
+      "file": "m1_track_a_xgb.json",
+      "model_source": "M1_Track_A",
+      "feature_list": [
+        "Age",
+        "SCr",
+        "HbA1c",
+        "Non-HDL-C",
+        "RDW",
+        "PLT",
+        "ALT",
+        "Cl"
+      ],
+      "objective": "binary:logistic",
+      "sha256": "d99a81fd790fe30154c1336968b6dc4362272264bb153515fe834d45b355b137"
+    },
+    "m1_b": {
+      "file": "m1_track_b_xgb.json",
+      "model_source": "M1_Track_B",
+      "feature_list": [
+        "Age",
+        "SCr",
+        "Non-HDL-C",
+        "RDW",
+        "SUA",
+        "K",
+        "MCV"
+      ],
+      "objective": "binary:logistic",
+      "sha256": "64057435bc253365151cc90aed53fbca85cf23f8638e6cf3142ef38b773445ae"
+    },
+    "m2_a": {
+      "file": "m2_track_a_xgb.json",
+      "model_source": "M2_Track_A",
+      "feature_list": [
+        "Age",
+        "SCr",
+        "HbA1c",
+        "Non-HDL-C",
+        "RDW",
+        "PLT",
+        "ALT",
+        "Cl"
+      ],
+      "objective": "binary:logistic",
+      "sha256": "19e8c4c81e53a646458409c0954baa2c9a4983e3280cd6c5deead24d1778decc"
+    },
+    "m2_b": {
+      "file": "m2_track_b_xgb.json",
+      "model_source": "M2_Track_B",
+      "feature_list": [
+        "Age",
+        "SCr",
+        "Non-HDL-C",
+        "RDW",
+        "SUA",
+        "K",
+        "MCV"
+      ],
+      "objective": "binary:logistic",
+      "sha256": "c2d3bf0cede23b5f3285fc621275ecf93be85869d0c5eb45747ca3e9b5c840ea"
+    },
+    "m3": {
+      "file": "m3_soft_xgb.json",
+      "model_source": "M3_Soft",
+      "feature_list": [
+        "Age",
+        "SCr",
+        "SUA",
+        "Non-HDL-C",
+        "RDW",
+        "K",
+        "PLT",
+        "MCV",
+        "ALT",
+        "MON#",
+        "LYM#",
+        "ODKD_probability_OOF"
+      ],
+      "objective": "binary:logistic",
+      "sha256": "a98185ce4f0c03e2b25cae9ec38a62b7f12808c6dc0e7d29414c11b0f0f1d9f5"
+    }
+  },
+  "preprocessing_sha256": "f3f6ca06228f3de3fd3c053b7b6110b47e488eab1d22e11a99d5236ef99be29a"
+}

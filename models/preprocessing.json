@@ -1,0 +1,262 @@
+{
+  "gatekeeper": {
+    "model_name": "Gatekeeper_full",
+    "architecture_role": "Observed ODKD routing probability",
+    "feature_order": [
+      "Age",
+      "BUN",
+      "RDW",
+      "SUA",
+      "HbA1c",
+      "Cl",
+      "A/G",
+      "NEU#"
+    ],
+    "median_imputer_values": [
+      61.0,
+      4.997999999999999,
+      13.8,
+      309.296,
+      7.0,
+      101.0,
+      1.35714237244915,
+      4.4
+    ],
+    "units": {
+      "Age": "years",
+      "BUN": "mmol/L",
+      "RDW": "%",
+      "SUA": "μmol/L",
+      "HbA1c": "%",
+      "Cl": "mmol/L",
+      "A/G": "ratio",
+      "NEU#": "10^9/L"
+    },
+    "transform": "median imputation only; canonical SI units; no scaling or unit conversion"
+  },
+  "m0": {
+    "model_name": "M0_Global",
+    "architecture_role": "Pooled Global reference",
+    "feature_order": [
+      "Age",
+      "SCr",
+      "SUA",
+      "Non-HDL-C",
+      "RDW",
+      "K",
+      "PLT",
+      "MCV",
+      "ALT",
+      "MON#",
+      "LYM#"
+    ],
+    "median_imputer_values": [
+      61.0,
+      71.60400000000001,
+      309.296,
+      3.20664,
+      13.8,
+      4.1,
+      234.0,
+      88.6,
+      21.0,
+      0.6,
+      2.1
+    ],
+    "units": {
+      "Age": "years",
+      "SCr": "μmol/L",
+      "SUA": "μmol/L",
+      "Non-HDL-C": "mmol/L",
+      "RDW": "%",
+      "K": "mmol/L",
+      "PLT": "10^9/L",
+      "MCV": "fL",
+      "ALT": "U/L",
+      "MON#": "10^9/L",
+      "LYM#": "10^9/L"
+    },
+    "transform": "median imputation only; canonical SI units; no scaling or unit conversion"
+  },
+  "m1_a": {
+    "model_name": "M1_Track_A",
+    "architecture_role": "Observed-ODKD-trained Track A specialist",
+    "feature_order": [
+      "Age",
+      "SCr",
+      "HbA1c",
+      "Non-HDL-C",
+      "RDW",
+      "PLT",
+      "ALT",
+      "Cl"
+    ],
+    "median_imputer_values": [
+      62.0,
+      74.256,
+      7.8,
+      3.27129,
+      13.9,
+      236.0,
+      21.0,
+      100.0
+    ],
+    "units": {
+      "Age": "years",
+      "SCr": "μmol/L",
+      "HbA1c": "%",
+      "Non-HDL-C": "mmol/L",
+      "RDW": "%",
+      "PLT": "10^9/L",
+      "ALT": "U/L",
+      "Cl": "mmol/L"
+    },
+    "transform": "median imputation only; canonical SI units; no scaling or unit conversion"
+  },
+  "m1_b": {
+    "model_name": "M1_Track_B",
+    "architecture_role": "Observed-ODKD-trained Track B specialist",
+    "feature_order": [
+      "Age",
+      "SCr",
+      "Non-HDL-C",
+      "RDW",
+      "SUA",
+      "K",
+      "MCV"
+    ],
+    "median_imputer_values": [
+      61.0,
+      71.60400000000001,
+      3.18078,
+      13.7,
+      309.296,
+      4.1,
+      88.6
+    ],
+    "units": {
+      "Age": "years",
+      "SCr": "μmol/L",
+      "Non-HDL-C": "mmol/L",
+      "RDW": "%",
+      "SUA": "μmol/L",
+      "K": "mmol/L",
+      "MCV": "fL"
+    },
+    "transform": "median imputation only; canonical SI units; no scaling or unit conversion"
+  },
+  "m2_a": {
+    "model_name": "M2_Track_A",
+    "architecture_role": "Gatekeeper-OOF-route-trained Track A specialist",
+    "feature_order": [
+      "Age",
+      "SCr",
+      "HbA1c",
+      "Non-HDL-C",
+      "RDW",
+      "PLT",
+      "ALT",
+      "Cl"
+    ],
+    "median_imputer_values": [
+      62.0,
+      72.488,
+      8.3,
+      3.31008,
+      13.9,
+      240.0,
+      21.0,
+      100.0
+    ],
+    "units": {
+      "Age": "years",
+      "SCr": "μmol/L",
+      "HbA1c": "%",
+      "Non-HDL-C": "mmol/L",
+      "RDW": "%",
+      "PLT": "10^9/L",
+      "ALT": "U/L",
+      "Cl": "mmol/L"
+    },
+    "transform": "median imputation only; canonical SI units; no scaling or unit conversion"
+  },
+  "m2_b": {
+    "model_name": "M2_Track_B",
+    "architecture_role": "Gatekeeper-OOF-route-trained Track B specialist",
+    "feature_order": [
+      "Age",
+      "SCr",
+      "Non-HDL-C",
+      "RDW",
+      "SUA",
+      "K",
+      "MCV"
+    ],
+    "median_imputer_values": [
+      61.0,
+      71.60400000000001,
+      3.1032,
+      13.7,
+      315.24399999999997,
+      4.1,
+      89.0
+    ],
+    "units": {
+      "Age": "years",
+      "SCr": "μmol/L",
+      "Non-HDL-C": "mmol/L",
+      "RDW": "%",
+      "SUA": "μmol/L",
+      "K": "mmol/L",
+      "MCV": "fL"
+    },
+    "transform": "median imputation only; canonical SI units; no scaling or unit conversion"
+  },
+  "m3": {
+    "model_name": "M3_Soft",
+    "architecture_role": "Global predictors plus continuous Gatekeeper probability",
+    "feature_order": [
+      "Age",
+      "SCr",
+      "SUA",
+      "Non-HDL-C",
+      "RDW",
+      "K",
+      "PLT",
+      "MCV",
+      "ALT",
+      "MON#",
+      "LYM#",
+      "ODKD_probability_OOF"
+    ],
+    "median_imputer_values": [
+      61.0,
+      71.60400000000001,
+      309.296,
+      3.20664,
+      13.8,
+      4.1,
+      234.0,
+      88.6,
+      21.0,
+      0.6,
+      2.1,
+      0.44641873240470886
+    ],
+    "units": {
+      "Age": "years",
+      "SCr": "μmol/L",
+      "SUA": "μmol/L",
+      "Non-HDL-C": "mmol/L",
+      "RDW": "%",
+      "K": "mmol/L",
+      "PLT": "10^9/L",
+      "MCV": "fL",
+      "ALT": "U/L",
+      "MON#": "10^9/L",
+      "LYM#": "10^9/L",
+      "ODKD_probability_OOF": "probability (0–1)"
+    },
+    "transform": "median imputation only; canonical SI units; no scaling or unit conversion"
+  }
+}
